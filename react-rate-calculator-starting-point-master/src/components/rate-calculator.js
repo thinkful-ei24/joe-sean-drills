@@ -28,16 +28,13 @@ export default class RateCalculator extends React.Component {
       this.setState({hourlyRate: this.getHourlyRate()});
     };
 
-    getHourlyRate = () => {
-      return (this.state.dayRate / this.state.hours);
-    }
-
     render() {
+        let rate = this.state.dayRate / this.state.hours;
         return (
             <form>
                 <NumberInput id="day-rate" changeHandler={this.handleInputChange} label="Day rate" min={0} max={5000} />
                 <NumberInput id="hours" changeHandler={this.handleInputChange} label="Hours" min={1} max={12} />
-                <Output id="hourly-rate" label="Hourly rate" value={this.state.hourlyRate} />
+                <Output id="hourly-rate" label="Hourly rate" value={rate} />
             </form>
         );
     }
