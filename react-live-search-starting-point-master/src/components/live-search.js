@@ -31,7 +31,7 @@ export default class LiveSearch extends React.Component {
     return (
       <div className="live-search">
           <SearchForm handleSearch={this.handleSearch}/>
-          <CharacterCount count={this.props.characters.length} />
+          <CharacterCount count={filteredCharacters.length} />
           <CharacterList characters={filteredCharacters} />
       </div>
     );
